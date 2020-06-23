@@ -5,10 +5,6 @@ SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
-DROP DATABASE IF EXISTS `test`;
-CREATE DATABASE `test` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `test`;
-
 DROP TABLE IF EXISTS `contacts`;
 CREATE TABLE `contacts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -23,6 +19,15 @@ CREATE TABLE `contacts` (
 
 INSERT INTO `contacts` (`id`, `name`, `lastName`, `email`, `phone`, `image`, `userId`) VALUES
 (1,	'Николай',	'Ксендзык',	'test-student-on-line2@mail.ru',	'89241958392',	'',	2),
+(2,	'Татьяна',	'Недикова',	'vetlab5607@rambler.ru',	'12312321312',	'',	2),
+(3,	'Николай',	'Николаев',	'test-student-on-line2@mail.ru',	'89241958392',	'',	2),
+(9,	'Николай',	'Емельянов',	'test-student-on-line2@mail.ru',	'89241958392',	'D:\\open_server\\OSPanel\\domains\\test.test/uploads/2/3912QFRRkUUmAWI.jpg',	2),
+(8,	'Николай',	'Николаев',	'test-student-on-line2@mail.ru',	'89241958392',	'D:\\open_server\\OSPanel\\domains\\test.test/uploads/23146_Ai2zpiX5Vg.jpg',	2),
+(10,	'Николай',	'Николаев',	'test-student-on-line2@mail.ru',	'89241958392',	'http://test.test/uploads/2/851_Ai2zpiX5Vg.jpg',	2),
+(11,	'Дмитрий',	'Мусяченко',	'test-student-on-line2@mail.ru',	'55555',	'uploads/2/60547.jpg',	2),
+(12,	'Дмитрий',	'Мусяченко',	'test-student-on-line2@mail.ru',	'55555',	'uploads/2/60547.jpg',	4),
+(13,	'Николай',	'Ксендзык',	'test-student-on-line2@mail.ru',	'89241958392',	'uploads/3/99085.jpg',	3),
+(14,	'Константин',	'Емельянов',	'test-student-on-line2@mail.ru',	'880',	'uploads/3/36637.jpg',	3),
 (15,	'Дмитрий',	'Мусяченко',	'test-student-on-line2@mail.ru',	'55555',	'uploads/2/60547.jpg',	3);
 
 DROP TABLE IF EXISTS `users`;
@@ -39,4 +44,4 @@ INSERT INTO `users` (`id`, `login`, `email`, `password`) VALUES
 (2,	'F274',	'test-student-on-line3@mail.ru',	'e120ea280aa50693d5568d0071456460'),
 (3,	'F696',	'dimati9@yandex.ru',	'e120ea280aa50693d5568d0071456460');
 
--- 2020-06-23 17:08:40
+-- 2020-06-23 17:27:42
