@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Конец редиректа
+
+php_value max_input_vars 5000
+
+RewriteRule ^personal? index.php?page=personal [L]
+
+
