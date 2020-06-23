@@ -23,7 +23,10 @@
 
 	<script src="/scripts/jquery.maskedinput.min.js?<?=filemtime($_SERVER['DOCUMENT_ROOT'] . '/scripts/jquery.maskedinput.min.js')?>"></script>
 	<script src="<?= SITE_URL ?>/scripts/jquery.cookie.js?"></script>
-	<script src="<?= SITE_URL ?>/scripts/script.js?<?=filemtime($_SERVER['DOCUMENT_ROOT'] . '/script.js')?>">"></script>
+	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+			async defer>
+	</script>
+	<script src="<?= SITE_URL ?>/scripts/script.js?<?=filemtime($_SERVER['DOCUMENT_ROOT'] . '/scripts/script.js')?>">"></script>
 
 
 

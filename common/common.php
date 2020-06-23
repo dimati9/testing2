@@ -9,6 +9,10 @@ define("SITE_URL", "http://test.test/");
 if (! defined('SITE_PATH')) {
 	define('SITE_PATH', dirname(dirname(__FILE__)) . '/');
 }
+// reCaptcha
+if (! defined('SITEKEY')) {
+	define('SITEKEY', '6LdUduQUAAAAANmdWnf7jNncqn7CJeGN9WfvtYsT');
+}
 if (! defined('SITE_PATHX')) {
 	define('SITE_PATHX', dirname(dirname(__FILE__)));
 }
@@ -16,7 +20,7 @@ if (! defined('TEMPLATES_FOLDER')) {
 	define('TEMPLATES_FOLDER', SITE_PATH . 'templates/');
 }
 if (! defined('UPLOADS_FOLDER')) {
-	define('UPLOADS_FOLDER', SITE_PATH . 'upload/');
+	define('UPLOADS_FOLDER', SITE_PATH . 'uploads/');
 }
 $deleteChars = ['"', ".", "'", "!"];
 
@@ -42,20 +46,4 @@ function init($page) {
 	}
 }
 
-$USERID = [];
-$auth = 0;
-if(!empty($_SESSION['auth'])) {
-	$users = DB::getAll('SELECT * FROM `users` ');
 
-	$user = "";
-	foreach ($users as $thisUser) {
-		if(md5($thisUser['email']) == $_SESSION['auth']) {
-			$USERID = $thisUser;
-			$auth = 1;
-		}
-	}
-
-	if(empty($USERID)) {
-		unset($_SESSION['auth']);
-	}
-}

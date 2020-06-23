@@ -32,9 +32,8 @@
 				</label>
 				<input required type="text" name="password" value="<?= $_POST['password'] ?>">
 			</div>
-
-
-			<input type="submit" value="Войти" class="btn btn-success">
+			<div id="captcha" class="g-recaptcha hidden" data-sitekey="<?=SITEKEY?>"></div>
+			<input type="submit" value="Войти" class="btn btn-success btn-continue">
 			<span>Или</span>
 			<a href="#" class="btn-outline-primary btn btn-register">Регистрация</a>
 
@@ -72,7 +71,6 @@
 					<input required type="text" name="repassword" value="<?= $_POST['repassword'] ?>">
 					<p class="input-group__text"></p>
 				</div>
-
 				<input type="submit" value="Зарегистрироватся" class="btn btn-success">
 				<span>Или</span>
 				<a href="#" class="btn btn-outline-secondary btn-auth">Войти</a>

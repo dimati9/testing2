@@ -1,4 +1,41 @@
+var getLoad = false;
+var fileId = 0;
+var onloadCallback = function() {
+    grecaptcha.render(
+        'captcha',
+        {"sitekey": "6LdUduQUAAAAANmdWnf7jNncqn7CJeGN9WfvtYsT", "theme": "light"}
+    );
+
+};
+
 jQuery(document).ready(function($) {
+    $('.btn-continue').on('click', function (e) {
+        check = setInterval(function () {
+            var v = grecaptcha.getResponse();
+            if(v != undefined && v != "") {
+                getLoad = true;
+                $('.btn-continue').removeClass('btn-secondary');
+                $('.btn-continue').prop('disabled', false);
+                $('.btn-continue').addClass('btn-success');
+                clearInterval(check);
+            }
+        }, 1000);
+        $(this).removeClass('btn-primary');
+        $(this).addClass('btn-secondary');
+        $(this).attr('disabled', 'disabled');
+        fileId = $(this).attr('data-id');
+        $('.g-recaptcha').removeClass('hidden');
+        e.preventDefault();
+    });
+
+
+
+    $('.btn-continue').on('click', function (e) {
+        e.preventDefault();
+        if(getLoad) {
+            $(this).parents('form').submit();
+        }
+    })
 
     // jquery mask для импутов
     $("input[name=number]").mask("+7 (999) 999-99-99");

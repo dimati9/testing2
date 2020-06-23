@@ -31,4 +31,5 @@ if(is_file(SITE_PATH . 'templates/'.$page)) {
 }
 
 
+
 init('bottom.php');

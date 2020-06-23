@@ -19,9 +19,3 @@ if(empty($_SESSION['auth'])) {
 		header('Location: ' . SITE_URL);
 	}
 }
-
-
-debugShow($_POST);
-debugShow($_GET);
-debugShow($_SESSION);
-debugShow($userData);

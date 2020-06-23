@@ -2,6 +2,11 @@
 
 $auth = 0;
 
+if(isset($_GET['out'])) {
+	$_SESSION['auth'] = "";
+	header('Location: '. SITE_URL);
+}
+
 if(empty($_SESSION['auth'])) {
 	include_once 'forms/add.php';
 } else {
