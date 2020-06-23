@@ -38,5 +38,5 @@
 	</div>
 
 </head>
-<body>
+<body data-captcha="<?=CAPTCHA?>">
 <?php init('header.php') ?>

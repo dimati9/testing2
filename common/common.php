@@ -10,6 +10,9 @@ if (! defined('SITE_PATH')) {
 	define('SITE_PATH', dirname(dirname(__FILE__)) . '/');
 }
 // reCaptcha
+if (! defined('CAPTCHA')) {
+	define('CAPTCHA', true); // or false
+}
 if (! defined('SITEKEY')) {
 	define('SITEKEY', '6LdUduQUAAAAANmdWnf7jNncqn7CJeGN9WfvtYsT');
 }

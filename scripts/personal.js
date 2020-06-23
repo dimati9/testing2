@@ -40,8 +40,6 @@ jQuery(document).ready(function ($) {
             success: function(json){
                 if(json){
                     json = JSON.parse(json);
-                    console.log(json);
-                    console.log(json.status);
                     if(json.status == 'ok') {
                         $('.add-form').hide();
                         showText("Запись добавлена!");
@@ -65,10 +63,8 @@ jQuery(document).ready(function ($) {
                 if (json) {
                     let elements = null;
                     object = JSON.parse(json);
-                    console.log(object);
                         if(object.items.length > 0) {
                             elements = JSON.parse(object.items);
-                            console.log(elements);
                         }
 
                     if (object.status == 'ok' && elements != null) {
@@ -85,11 +81,9 @@ jQuery(document).ready(function ($) {
                         $('.main-tbody').html(items);
 
                         $('.remove').on('click', function (e) {
-                            console.log('click');
                             showText("Удаление...");
                             e.preventDefault();
                             let id = $(this).parents('tr').find('th').attr('data-id');
-                            console.log(id);
                             $.ajax({
                                 'url': '/ajax/removeContact.php',
                                 'type': 'GET',
@@ -114,7 +108,6 @@ jQuery(document).ready(function ($) {
                             showText("Загружаем...");
                             e.preventDefault();
                             let id = $(this).parents('tr').find('th').attr('data-id');
-                            console.log(id);
                             $.ajax({
                                 'url': '/ajax/getContact.php',
                                 'type': 'GET',
@@ -124,7 +117,6 @@ jQuery(document).ready(function ($) {
                                         $('.edit-form').show();
                                         object = JSON.parse(json);
                                         let contact = JSON.parse(object.item);
-                                        console.log(contact);
                                         if (object.status == 'ok') {
                                             $('.edit_name').val(contact.name);
                                             $('.edit_lastName').val(contact.lastName);
